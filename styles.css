@@ -108,4 +108,23 @@ main {
   padding-block: 2rem;
 }
 
-/* TODO: add the relative-unit breakpoint justified in navigation-plan.html. */
+@media (min-width: 51rem) {
+
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .js .menu-button {
+    display: none;
+  }
+
+  .nav-list,
+  .js .nav-list,
+  .js .nav-list.is-open {
+    display: flex;
+    margin: 0;
+  }
+
+}
