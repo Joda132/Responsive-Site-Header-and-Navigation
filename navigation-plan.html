@@ -1,9 +1,132 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Navigation Plan and Evidence</title><style>body{max-width:75rem;margin:auto;padding:1rem;font:1rem/1.5 Arial,sans-serif}h1,h2{color:#8c1d40}table{width:100%;border-collapse:collapse}th,td{border:1px solid #999;padding:.55rem;text-align:left;vertical-align:top}th{background:#8c1d40;color:#fff}</style></head><body>
-<h1>Navigation Plan and Evidence</h1><p><strong>Student:</strong> [Name] &nbsp; <strong>Site:</strong> [Site name and purpose]</p>
-<h2>1. Priority tasks and content inventory</h2><ol><li>[Task]</li><li>[Task]</li><li>[Optional task]</li></ol><table><tr><th>Destination</th><th>Final label</th><th>Order/group rationale</th></tr><tr><td>[Destination]</td><td>[Label]</td><td>[Rationale]</td></tr></table>
-<h2>2. Breakpoint evidence</h2><p><strong>Method and widths tested:</strong> [Response]</p><p><strong>First content failure:</strong> [What happened and at what width?]</p><p><strong>Chosen breakpoint in relative units:</strong> [Response]</p><p><strong>Long-label and zoom retest:</strong> [Observed result and repair]</p>
-<h2>3. Interaction and failure test record</h2><table><tr><th>Condition</th><th>Expected</th><th>Observed</th><th>Result and repair</th></tr><tr><td>Keyboard: button, Tab, Escape, focus</td><td>[Expected]</td><td>[Observed]</td><td>[Pass/fail and repair]</td></tr><tr><td>Pointer/touch targets</td><td>[Expected]</td><td>[Observed]</td><td>[Pass/fail and repair]</td></tr><tr><td>320px and breakpoint region</td><td>[Expected]</td><td>[Observed]</td><td>[Pass/fail and repair]</td></tr><tr><td>200% zoom</td><td>[Expected]</td><td>[Observed]</td><td>[Pass/fail and repair]</td></tr><tr><td>JavaScript unavailable</td><td>[Expected]</td><td>[Observed]</td><td>[Pass/fail and repair]</td></tr><tr><td>CSS unavailable / wide recovery</td><td>[Expected]</td><td>[Observed]</td><td>[Pass/fail and repair]</td></tr></table><p><strong>Screenshot filenames and what each proves:</strong> [Response]</p>
-<h2>4. Peer task test</h2><p><strong>Tester relationship (no name needed):</strong> [Response]</p><p><strong>Two tasks attempted:</strong> [Response]</p><p><strong>What the tester did or said:</strong> [Direct observation]</p><p><strong>Change made or justified:</strong> [Response]</p>
-<h2>5. JavaScript code defense</h2><p>Explain initialization, state synchronization, activation, and Escape/focus behavior in your own words. Refer to the exact variable, attribute, dataset value, function, and event used.</p><p>[Response]</p>
-<h2>6. AI disclosure</h2><p><strong>Tool and purpose, or none:</strong> [Response]</p><p><strong>Prompt/task:</strong> [Response]</p><p><strong>Accepted, changed, or rejected output:</strong> [Response]</p><p><strong>How I verified it:</strong> [Tests and sources]</p>
-</body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Navigation Plan and Evidence</title>
+  <style>body{max-width:75rem;margin:auto;padding:1rem;font:1rem/1.5 Arial,sans-serif}h1,h2{color:#8c1d40}table{width:100%;border-collapse:collapse}th,td{border:1px solid #999;padding:.55rem;text-align:left;vertical-align:top}th{background:#8c1d40;color:#fff}</style>
+</head>
+
+<body>
+
+<h1>Navigation Plan and Evidence</h1>
+<p><strong>Student:</strong> Hunter Longie &nbsp; <strong>Site:</strong> ASU Library, helps students find books, attend events, and get help.</p>
+
+<h2>1. Priority tasks and content inventory</h2>
+<ol>
+  <li>Discover if the library has the book that the user wants</li>
+  <li>Check where the library opens and where it is to go to.</li>
+  <li>Sign up at an event</li>
+</ol>
+<table>
+  <tr>
+    <th>Destination</th>
+    <th>Final label</th>
+    <th>Order/group rationale</th>
+  </tr>
+  <tr>
+    <td>index.html</td>
+    <td>Home</td>
+    <td>A way to go back to the start</td>
+  </tr>
+  <tr>
+    <td>index.html#find-books</td>
+    <td>Find Books</td>
+    <td>This is cleaner then the "Catalog", and it is the second the most likely used task making it go second.</td>
+  </tr>
+  <tr>
+    <td>index.html#events</td>
+    <td>Events</td>
+    <td>This supports the event sign-up task</td>
+  </tr>
+  <tr>
+    <td>support.html</td>
+    <td>Technology Support</td>
+    <td>It says exactly what help is offered.</td>
+  </tr>
+  <tr>
+    <td>visit.html</td>
+    <td>Hours &amp; Location</td>
+    <td>this answers the when and where directly.</td>
+  </tr>
+  <tr>
+    <td>support.html#contact</td>
+    <td>Contact</td>
+    <td>This goes last as it is for questions the other pages don't answer directly.</td>
+  </tr>
+</table>
+
+<h2>2. Breakpoint evidence</h2>
+<p><strong>Method and widths tested:</strong> Forced the layout and resized it in Chromium.</p>
+<p><strong>First content failure:</strong> At higher pixel counts, around 800, the contact dropped to a row. It fit at 824px however it was crowded against the site name. The past rem i used in the assignment no longer worked with this starter's larger scope</p>
+<p><strong>Chosen breakpoint in relative units:</strong> 54rem and 864px the first width with one row and having a comfortable gap.</p>
+<p><strong>Long-label and zoom retest:</strong> With a long test label it wrapped with no sideways scroll. With wide widths using flex-wrap:wrap it moved it to a second row with no overlap at 200 percent zoom, now the narrow menu works with nothing cut off.</p>
+<h2>3. Interaction and failure test record</h2>
+<table>
+  <tr>
+    <th>Condition</th>
+    <th>Expected</th>
+    <th>Observed</th>
+    <th>Result and repair</th>
+  </tr>
+  <tr>
+    <td>For keyboard, button, tab, escape, focus</td>
+    <td>the tab order would go first enter and space toggle, escape closes and refocuses Menu, the focus is visible.</td>
+    <td>Using enter and space toggled and aria expanded matched. escape from contact ended up closing the menu and focused menu had a gold outline on every item.</td>
+    <td>Pass.</td>
+  </tr>
+  <tr>
+    <td>Pointer/touch targets</td>
+    <td>It is at least 24px tall amd isnt overlapping.</td>
+    <td>The observed is all correct, the menu, links, brand all are the proper length.</td>
+    <td>Pass after repair the brand was 21px and I added padding.</td>
+  </tr>
+  <tr>
+    <td>320px and breakpoint region</td>
+    <td>There is No sideways scroll and it is a clean switch.</td>
+    <td>There is no scroll at a smaller size.</td>
+    <td>Pass after repair.</td>
+  </tr>
+  <tr>
+    <td>200 percent zoom</td>
+    <td>the narrow layout and nothing was cut off.</td>
+    <td>there is a narrow menu with all of the links and no scroll as seen in the screenshot.</td>
+    <td>Pass</td>
+  </tr>
+  <tr>
+    <td>JavaScript unavailable</td>
+    <td>Button should be hidden, all the links are usable.</td>
+    <td>The button is hidden with all links working at 320px and 1280px</td>
+    <td>Pass</td>
+  </tr>
+  <tr>
+    <td>CSS unavailable</td>
+    <td>The links should always still be readable wihtout CSS and the wide list should always show after resizing.</td>
+    <td>The plain list was in order without the CSS there</td>
+    <td>Pass</td>
+  </tr>
+</table>
+<p><strong>Screenshot filenames and what each proves:</strong> <em>-200zoom.png</em>: It shows at 200 percent zoom the page formatted properly and focus visible. <em>wide_focus.png</em>: It shows current page and the focus being visible..</p>
+
+<h2>4. Peer task test</h2>
+<p><strong>Tester relationship (no name needed):</strong> friend</p>
+<p><strong>Two tasks attempted:</strong> The first task was to find what time the library closes on saturday, and the second task was to find out how to sign up for a study workshop. Both started on the home screen.</p>
+<p><strong>What the tester did or said:</strong> The tester for task 1 opened the menu and chose hours and location and landed on the visit.html. The answer was the first thing on the page which says 10 am to 6 pm on saturday. Task 2 was also completed through the menu and they were able to find it easily. The tester noted that the events section says you can sign up online however it doesnt have a link.</p>
+<p><strong>Change made or justified:</strong> The labels and order I have are all justified as my friend was able to find everything with ease without issue. They picked the correct link on first try for both.</p>
+
+<h2>5. JavaScript code defense</h2>
+<p>Explain initialization, state synchronization, activation, and Escape/focus behavior in your own words. Refer to the exact variable, attribute, dataset value, function, and event used.</p>
+<p><strong>Initialization:</strong> This adds the js class to the <<code>&lt;html&gt;</code>> so that the CSS is able to hide the list only when Javascript is running. It sets button.hidden=false and calls setOpen(false)</p>
+<p><strong>State synchronization:</strong> The setOpen(isOpen) will set teh aria-expanded ON button and toggles the is-open on list together.</p>
+<p><strong>Activation:</strong> the click event will call the setOpen with the opposite state. And a native button fires click for enter ane space.</p>
+<p><strong>On the keydown if the event.key is "escape" and the menu is open it will cal setOpen(false) and button.focus().</p>
+
+<h2>6. AI disclosure</h2>
+<p><strong>Tool and purpose, or none:</strong> none</p>
+<p><strong>Prompt/task:</strong> none</p>
+<p><strong>Accepted, changed, or rejected output:</strong> none</p>
+<p><strong>How I verified it:</strong> none</p>
+
+</body>
+
+</html>
