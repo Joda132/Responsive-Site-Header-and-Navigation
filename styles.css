@@ -61,6 +61,8 @@ body {
   list-style: none;
   margin: .75rem 0 0;
   padding: 0;
+  display: grid;
+  gap: .25rem;
 }
 
 .nav-list a {
@@ -81,6 +83,8 @@ body {
 .nav-list a[aria-current="page"] {
   color: var(--accent);
   font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: .25em;
 }
 
 a:focus-visible,
@@ -94,7 +98,7 @@ a:focus-visible,
 }
 
 .js .nav-list.is-open {
-  display: block;
+  display: grid;
 }
 
 main,
@@ -108,12 +112,13 @@ main {
   padding-block: 2rem;
 }
 
-@media (min-width: 51rem) {
+@media (min-width: 54rem) {
 
   .site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
   }
 
   .js .menu-button {
@@ -124,6 +129,7 @@ main {
   .js .nav-list,
   .js .nav-list.is-open {
     display: flex;
+    flex-wrap: wrap;
     margin: 0;
   }
 
